@@ -4,14 +4,15 @@ import { Message } from "./Message"
 export const Form = () =>{
     const [tMes, setTMes] = useState()
 
-    const handleChange=(ev)=>{
-setTMes( ev.target.value)
+const handleSubmit=(ev)=>{
+    ev.preventDefault();
+    setTMes(ev.target[0].value);
+    ev.target[0].value = '';
 }
-    return <form>
-        {/* <p>Count: {count}</p> */}
-        {/* <input type = "text"/> */}
-        {/* <button type="button">click</button> */}
-        <input type="text" onChange={handleChange}/>
+
+    return <form onSubmit={handleSubmit}>
         <Message textMes = {tMes}/>
+        <input type="text"/>
+        <button type="submit">Отправить</button>
     </form>
 }
