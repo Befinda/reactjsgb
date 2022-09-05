@@ -10,9 +10,11 @@ const handleSubmit=(ev)=>{
     ev.target[0].value = '';
 }
 
-    return <form onSubmit={handleSubmit}>
+    return <form onSubmit={handleSubmit} className ="formmes">
         <Message textMes = {tMes}/>
-        <input type="text"/>
-        <button type="submit">Отправить</button>
+        <div className="wrap">
+        <input className = "formmes-input" type="text"/>
+        <button className = "formmes-btn" type="submit">Отправить</button>
+        </div>
     </form>
 }
