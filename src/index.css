@@ -12,22 +12,5 @@ body {
 font-size: 16px;
 padding: 20px;
 }
-.formmes{
-  margin: 0 auto;
-  max-width: 400px;
-}
-.wrap{
-  display: flex;
-  justify-content: space-between;
 
-}
-.formmes-input{
-  flex-grow: 1;
-}
-.formmes-btn{
-  cursor: pointer;
-}
-.message{
-  text-align: left;
-  word-wrap: break-word;
-}
+

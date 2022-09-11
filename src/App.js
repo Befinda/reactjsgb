@@ -1,5 +1,5 @@
 import './App.css';
-import { Form } from './components/Form';
+import { Form } from './components/Form/Form';
 // import { FormClass } from './components/FormClass';
 
 export const App = () => {
