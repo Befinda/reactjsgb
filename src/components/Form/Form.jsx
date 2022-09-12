@@ -1,21 +1,33 @@
 import { useState } from "react";
-import { Message } from "../Message/Message"
+
 import style from "./Form.module.css"
 
-export const Form = () =>{
-    const [tMes, setTMes] = useState()
+export const Form = ({addMessage}) =>{
+
+const [value, setValue] = useState(''); 
 
 const handleSubmit=(ev)=>{
     ev.preventDefault();
-    setTMes(ev.target[0].value);
-    ev.target[0].value = '';
+    addMessage({
+        author: 'USER',
+        value,
+    });
+    setValue('');
 }
 
     return <form onSubmit={handleSubmit} className ={style.formmes}>
-        <Message textMes = {tMes}/>
+
         <div className={style.wrap}>
-        <input className = {style.formmesInput} type="text"/>
-        <button className = {style.formmesBtn} type="submit">Отправить</button>
+        <input 
+            className = {style.formmesInput} 
+            type="text" 
+            value={value}
+            onChange={(e)=>setValue(e.target.value)}/>
+        <button 
+            className = {style.formmesBtn}
+            type="submit"
+            disabled={!value}
+        >Отправить</button>
         </div>
     </form>
 }

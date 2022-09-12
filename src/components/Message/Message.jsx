@@ -1,5 +1,11 @@
 import style from './Message.module.css'
-export const Message = (props) =>{
+export const Message = ({messages}) =>{
 
-    return <p className={style.message}>Сообщение: {props.textMes}</p>
+    return <ul>
+        {messages.map((message,idx)=>(
+        <li key={idx}>
+            {message.author}: {message.value}
+        </li>
+        ))}
+    </ul>
 }
