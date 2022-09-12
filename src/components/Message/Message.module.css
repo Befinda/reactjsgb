@@ -1,4 +1,11 @@
 .message{
     text-align: left;
     word-wrap: break-word;
+    margin: 0 auto;
+    max-width: 400px;
+    list-style: none;
+  }
+  .bot{
+    font-style: italic;
+    color: blue;
   }
