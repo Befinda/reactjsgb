@@ -1,0 +1,15 @@
+.formmes{
+    margin: 0 auto;
+    max-width: 400px;
+  }
+  .wrap{
+    display: flex;
+    justify-content: space-between;
+  
+  }
+  .formmesInput{
+    flex-grow: 1;
+  }
+  .formmesBtn{
+    cursor: pointer;
+  }
