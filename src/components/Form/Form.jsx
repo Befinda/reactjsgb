@@ -23,7 +23,7 @@ export const Form = ({ addMessage }) => {
           value={value}
           onChange={(e) => setValue(e.target.value)}
         />
-        <button className={hover? style.formmesBtnhover : style.formmesBtn} type="submit" disabled={!value}>
+        <button className={style.formmesBtn} type="submit" disabled={!value}>
           Отправить
         </button>
       </div>
