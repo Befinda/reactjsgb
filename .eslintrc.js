@@ -5,7 +5,14 @@ module.exports = {
     es6: true,
     jest: true
   },
-  extends: ['prettier', 'eslint:recommended', 'plugin:prettier/recommended', 'plugin:react/recommended', 'plugin:react-hooks/recommended', 'plugin:storybook/recommended'],
+  extends: ['prettier', 
+  'eslint:recommended', 
+  'plugin:prettier/recommended', 
+  'plugin:react/recommended', 
+  'plugin:react-hooks/recommended', 
+  'plugin:storybook/recommended'
+],
+
   parserOptions: {
     ecmaFeatures: {
       jsx: true
