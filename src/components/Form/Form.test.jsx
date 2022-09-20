@@ -18,31 +18,33 @@ describe('Form', () => {
   //   render(<Form addMessage={addMessage} />);
   // });
   it('input change with fireevent', () => {
-    // const input = screen.getByTestId('input');
     fireEvent.change(input, { target: { value: 'new value' } });
     expect(input).toBeInTheDocument();
     expect(input.value).toBe('new value');
   });
   it('input change with userevent', async () => {
-    //  const input = screen.getByTestId('input');
     await userEvent.type(input, 'second value');
     expect(input).toBeInTheDocument();
     expect(input.value).toBe('second value');
   });
   it('button click with fireEvent', () => {
-    // const input = screen.getByTestId('input');
     fireEvent.change(input, { target: { value: 'new value' } });
     expect(input.value).toBe('new value');
 
-    // const btn = screen.getByTestId('button');
     fireEvent.click(btn);
     expect(addMessage).toHaveBeenCalledTimes(1);
   });
   it('button enable if input value != "" ', () => {
-    // const input = screen.getByTestId('input');
-    // const btn = screen.getByTestId('button');
     fireEvent.change(input, { target: { value: 'new value' } });
     expect(btn).not.toBeDisabled();
+  });
+  it('addMessage with arg USER, input.value', () => {
+    fireEvent.change(input, { target: { value: 'new value' } });
+    fireEvent.submit(btn);
+    expect(addMessage).toHaveBeenCalledWith({
+      author: 'USER',
+      value: 'new value',
+    });
   });
   //   it('snapshot', () => {
   //     const { asFragment } = render(<Form addMessage={addMessage} />);
