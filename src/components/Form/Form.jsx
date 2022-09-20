@@ -22,8 +22,14 @@ export const Form = ({ addMessage }) => {
           type="text"
           value={value}
           onChange={(e) => setValue(e.target.value)}
+          data-testid="input"
         />
-        <button className={style.formmesBtn} type="submit" disabled={!value}>
+        <button
+          className={style.formmesBtn}
+          type="submit"
+          disabled={!value}
+          data-testid="button"
+        >
           Отправить
         </button>
       </div>

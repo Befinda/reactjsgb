@@ -24,6 +24,7 @@
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage --colors"
   },
+
   "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
   "main": "index.js",
   "keywords": [],
