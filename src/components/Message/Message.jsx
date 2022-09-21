@@ -3,7 +3,11 @@ export const Message = ({ messages }) => {
   return (
     <ul className={style.message}>
       {messages.map((message, idx) => (
-        <li key={idx} className={message.author === 'BOT' ? style.bot : ''}>
+        <li
+          key={idx}
+          className={message.author === 'BOT' ? style.bot : ''}
+          data-testid="itemlist"
+        >
           {message.author}: {message.value}
         </li>
       ))}
