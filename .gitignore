@@ -6,6 +6,7 @@
 .pnp.js
 /src/components/FormClass.jsx
 /build
+/src/stories
 
 # testing
 /coverage
