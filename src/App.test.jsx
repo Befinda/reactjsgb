@@ -31,6 +31,8 @@ describe('App', () => {
     const btn = screen.getByTestId('button');
     await userEvent.click(btn);
 
-    expect(await screen.findByText(/I'm BOT/)).toBeInTheDocument();
+    expect(
+      await screen.findByText(/I'm BOT/, undefined, { timeout: 1500 })
+    ).toBeInTheDocument();
   });
 });
