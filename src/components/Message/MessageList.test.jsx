@@ -1,13 +1,13 @@
-import { Message } from './Message';
+import { MessageList } from './MessageList';
 import { render } from '@testing-library/react';
 import { screen } from '@testing-library/react';
 
 import '@testing-library/jest-dom';
 
-describe('Message', () => {
+describe('MessageList', () => {
   let messages = [];
   it('render component', () => {
-    render(<Message messages={messages} />);
+    render(<MessageList messages={messages} />);
   });
   it('element li should be 2', () => {
     messages = [
@@ -20,7 +20,7 @@ describe('Message', () => {
         value: 'World',
       },
     ];
-    render(<Message messages={messages} />);
+    render(<MessageList messages={messages} />);
     expect(screen.getAllByTestId('itemlist')).toHaveLength(2);
   });
   it('li.className = bot', () => {
@@ -34,7 +34,7 @@ describe('Message', () => {
         value: "I'm BOT",
       },
     ];
-    render(<Message messages={messages} />);
+    render(<MessageList messages={messages} />);
     expect(screen.getAllByTestId('itemlist')[1]).toHaveClass('bot');
   });
 });

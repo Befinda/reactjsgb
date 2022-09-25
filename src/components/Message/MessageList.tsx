@@ -1,5 +1,12 @@
-import style from './Message.module.css';
-export const Message = ({ messages }) => {
+import style from './MessageList.module.css';
+import { FC } from 'react';
+import { Message } from 'src/types';
+
+interface MessageListProps {
+  messages: Message[];
+}
+
+export const MessageList: FC<MessageListProps> = ({ messages }) => {
   return (
     <ul className={style.message}>
       {messages.map((message, idx) => (

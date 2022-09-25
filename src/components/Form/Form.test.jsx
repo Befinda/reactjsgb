@@ -4,6 +4,7 @@ import { render } from '@testing-library/react';
 import { screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import '@testing-library/jest-dom';
+import { DOMElement } from 'react';
 
 describe('Form', () => {
   const addMessage = jest.fn();

@@ -1,11 +1,16 @@
-import { useState } from 'react';
+import React, { FC, useState } from 'react';
+import { Message } from 'src/types';
 
 import style from './Form.module.css';
 
-export const Form = ({ addMessage }) => {
+interface FormProps {
+  addMessage: (msg: Message) => void;
+}
+
+export const Form: FC<FormProps> = ({ addMessage }) => {
   const [value, setValue] = useState('');
 
-  const handleSubmit = (ev) => {
+  const handleSubmit = (ev: React.FormEvent<HTMLFormElement>) => {
     ev.preventDefault();
     addMessage({
       author: 'USER',
