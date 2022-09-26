@@ -1,6 +1,7 @@
 import style from './MessageList.module.css';
 import { FC } from 'react';
 import { Message } from 'src/types';
+import { List, ListItem } from '@mui/material';
 
 interface MessageListProps {
   messages: Message[];
@@ -8,16 +9,16 @@ interface MessageListProps {
 
 export const MessageList: FC<MessageListProps> = ({ messages }) => {
   return (
-    <ul className={style.message}>
+    <List className={style.message}>
       {messages.map((message, idx) => (
-        <li
+        <ListItem
           key={idx}
           className={message.author === 'BOT' ? style.bot : ''}
           data-testid="itemlist"
         >
           {message.author}: {message.value}
-        </li>
+        </ListItem>
       ))}
-    </ul>
+    </List>
   );
 };
