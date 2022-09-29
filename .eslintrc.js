@@ -10,7 +10,9 @@ module.exports = {
   'plugin:prettier/recommended', 
   'plugin:react/recommended', 
   'plugin:react-hooks/recommended', 
-  'plugin:storybook/recommended'
+  'plugin:storybook/recommended',
+  'plugin:@typescript-eslint/eslint-recommended',
+  'plugin:@typescript-eslint/recommended',
 ],
 
   parserOptions: {
@@ -30,7 +32,8 @@ module.exports = {
     quotes: ['warn', 'single'],
     semi: ['warn', 'always'],
     'react/react-in-jsx-scope': 'off',
-    'react/display-name': 'off'
+    'react/display-name': 'off',
+    'no-console': ["error", { allow: ["warn", "error"] }]
   },
   overrides: [{
     files: ['webpack.config.js'],
