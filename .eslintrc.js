@@ -32,7 +32,8 @@ module.exports = {
     quotes: ['warn', 'single'],
     semi: ['warn', 'always'],
     'react/react-in-jsx-scope': 'off',
-    'react/display-name': 'off'
+    'react/display-name': 'off',
+    'no-console': ["error", { allow: ["warn", "error"] }]
   },
   overrides: [{
     files: ['webpack.config.js'],

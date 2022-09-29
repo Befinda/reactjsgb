@@ -4,7 +4,6 @@ import './App.css';
 import { Form } from './components/Form/Form';
 import { MessageList } from './components/Message/MessageList';
 import { Chats, Message, Messages } from './types';
-// import { FormClass } from './components/FormClass';
 
 export const App: FC = () => {
   const [messages, setMesssages] = useState<Messages>([]);
@@ -13,7 +12,6 @@ export const App: FC = () => {
     { id: 2, name: 'Second chat' },
   ]);
 
-  console.log(chats);
   const addMessage = (newMessage: Message) => {
     setMesssages((prevMessages) => [...prevMessages, newMessage]);
   };
@@ -43,7 +41,6 @@ export const App: FC = () => {
         <MessageList messages={messages} />
         <Form addMessage={addMessage} />
       </div>
-      {/* <FormClass /> */}
     </div>
   );
 };
