@@ -28,6 +28,10 @@ export const App: FC = () => {
     });
   };
 
+  const onDeleteChat = (itemChat: Chat) => {
+    setChats(chats.filter((item) => item.id != itemChat.id));
+  };
+
   const onAddMessage = (chatId: string, newMessage: Message) => {
     setMessages({
       ...messages,
@@ -43,7 +47,13 @@ export const App: FC = () => {
         <Route path="chats">
           <Route
             index
-            element={<ChatList chats={chats} onAddChat={onAddChat} />}
+            element={
+              <ChatList
+                chats={chats}
+                onAddChat={onAddChat}
+                onDeleteChat={onDeleteChat}
+              />
+            }
           />
           <Route
             path=":chatId"
@@ -51,6 +61,7 @@ export const App: FC = () => {
               <ChatPage
                 chats={chats}
                 onAddChat={onAddChat}
+                onDeleteChat={onDeleteChat}
                 messages={messages}
                 onAddMessage={onAddMessage}
               />

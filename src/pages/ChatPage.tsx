@@ -11,12 +11,14 @@ import style from './ChatPage.module.scss';
 interface ChatPageProps {
   chats: Chat[];
   onAddChat: (chat: Chat) => void;
+  onDeleteChat: (chat: Chat) => void;
   messages: Messages;
   onAddMessage: (chatId: string, msg: Message) => void;
 }
 export const ChatPage: FC<ChatPageProps> = ({
   chats,
   onAddChat,
+  onDeleteChat,
   messages,
   onAddMessage,
 }) => {
@@ -46,7 +48,11 @@ export const ChatPage: FC<ChatPageProps> = ({
 
   return (
     <>
-      <ChatList chats={chats} onAddChat={onAddChat} />
+      <ChatList
+        chats={chats}
+        onAddChat={onAddChat}
+        onDeleteChat={onDeleteChat}
+      />
       <MessageList messages={chatId ? messages[chatId] : []} />
       <Form addMessage={onAddMessage} />
     </>
