@@ -10,8 +10,10 @@
     "@mui/material": "^5.10.6",
     "eslint": "^8.23.1",
     "gh-pages": "^4.0.0",
+    "nanoid": "^4.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-router-dom": "^6.4.1",
     "webpack": "^5.64.4",
     "webpack-dev-server": "^4.6.0"
   },

@@ -4,22 +4,25 @@ import Button from '@mui/material/Button';
 import SendIcon from '@mui/icons-material/Send';
 import TextField from '@mui/material/TextField';
 import style from './Form.module.css';
+import { useParams } from 'react-router-dom';
 
 interface FormProps {
-  addMessage: (msg: Message) => void;
+  addMessage: (chatId: string, msg: Message) => void;
 }
 
 export const Form: FC<FormProps> = ({ addMessage }) => {
   const [value, setValue] = useState('');
+  const { chatId } = useParams();
 
   const handleSubmit = (ev: React.FormEvent<HTMLFormElement>) => {
     ev.preventDefault();
-    addMessage({
-      author: 'USER',
-      value,
-    });
+    if (chatId) {
+      addMessage(chatId, {
+        author: 'USER',
+        value,
+      });
+    }
     setValue('');
-    // document.getElementById<HTMLInputElement>("outlined-basic").autoFocus = true;
   };
 
   return (

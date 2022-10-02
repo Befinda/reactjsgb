@@ -2,11 +2,11 @@ export interface Message {
   author: string;
   value: string;
 }
-export type Messages = Message[];
+export type Messages = Record<string, Message[]>;
 
 export interface Chat {
-  id: number;
-  name: string;
+  id: string;
+  namechat: string;
 }
 
 export type Chats = Chat[];
