@@ -5,7 +5,7 @@ import { Chats, Chat, Messages, Message } from './types';
 import { Main } from './pages/Main';
 import { Profile } from './pages/Profile';
 import { ChatList } from './components/ChatList/ChatList';
-import { ChatPage } from './pages/ChatPage';
+import { ChatPage } from './pages/ChatPage/ChatPage';
 import { Header } from './components/Header';
 
 const defaultChats: Chat[] = [
