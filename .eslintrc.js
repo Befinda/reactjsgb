@@ -5,15 +5,15 @@ module.exports = {
     es6: true,
     jest: true
   },
-  extends: ['prettier', 
-  'eslint:recommended', 
-  'plugin:prettier/recommended', 
-  'plugin:react/recommended', 
-  'plugin:react-hooks/recommended', 
-  'plugin:storybook/recommended',
-  'plugin:@typescript-eslint/eslint-recommended',
-  'plugin:@typescript-eslint/recommended',
-],
+  extends: ['prettier',
+    'eslint:recommended',
+    'plugin:prettier/recommended',
+    'plugin:react/recommended',
+    'plugin:react-hooks/recommended',
+    'plugin:storybook/recommended',
+    'plugin:@typescript-eslint/eslint-recommended',
+    'plugin:@typescript-eslint/recommended',
+  ],
 
   parserOptions: {
     ecmaFeatures: {
@@ -33,12 +33,14 @@ module.exports = {
     semi: ['warn', 'always'],
     'react/react-in-jsx-scope': 'off',
     'react/display-name': 'off',
-    'no-console': ["error", { allow: ["warn", "error"] }]
+    'no-console': ["error", { allow: ["warn", "error"] }],
+    "@typescript-eslint/ban-ts-ignore": "off"
   },
   overrides: [{
     files: ['webpack.config.js'],
     rules: {
-      '@typescript-eslint/no-var-requires': ['off']
+      '@typescript-eslint/no-var-requires': ['off'],
+      "@typescript-eslint/ban-ts-ignore": "off",
     }
   }]
 };
