@@ -13,18 +13,23 @@ export const Profile: FC = () => {
   return (
     <>
       <h2>Profile page</h2>
+      <br />
       <p>name: {name}</p>
+      <label>
+        Change Name:{' '}
+        <input
+          type="text"
+          value={value}
+          onChange={(e) => setValue(e.target.value)}
+        />
+      </label>
+      <button onClick={() => dispatch(changeName(value))}>change name</button>
+      <br />
+      <br />
       <label>
         visible: <input type="checkbox" checked={visible} />
       </label>
       <button onClick={() => dispatch(toggleProfile())}>change visible</button>
-      <br />
-      <input
-        type="text"
-        value={value}
-        onChange={(e) => setValue(e.target.value)}
-      />
-      <button onClick={() => dispatch(changeName(value))}>change name</button>
     </>
   );
 };
