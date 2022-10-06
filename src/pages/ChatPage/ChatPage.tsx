@@ -1,10 +1,10 @@
 import { FC, useEffect } from 'react';
 import { useParams, Navigate } from 'react-router-dom';
 import { ChatList } from 'src/components/ChatList';
-import { Form } from './../components/Form/Form';
+import { Form } from '../../components/Form/Form';
 import { MessageList } from 'src/components/Message/MessageList';
 import { Chat, Message, Messages } from 'src/types';
-import style from './ChatPage.module.scss';
+// import style from './ChatPage.module.css';
 
 // import { WithClasses } from './../../HOC/WithClasses';
 
@@ -54,6 +54,11 @@ export const ChatPage: FC<ChatPageProps> = ({
         onDeleteChat={onDeleteChat}
       />
       <MessageList messages={chatId ? messages[chatId] : []} />
+
+      {/* <MessageListWithClass
+        messages={chatId ? messages[chatId] : []}
+        classes={style.border}
+      /> */}
       <Form addMessage={onAddMessage} />
     </>
   );
